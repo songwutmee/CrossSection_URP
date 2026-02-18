@@ -1,32 +1,56 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+##################################################
+# =============== UNITY MERGE ====================
+##################################################
 
-# Unity YAML files
-*.cs text diff=csharp
-*.shader text
-*.cginc text
+*.unity merge=unityyamlmerge eol=lf
+*.prefab merge=unityyamlmerge eol=lf
+*.asset merge=unityyamlmerge eol=lf
+*.anim merge=unityyamlmerge eol=lf
+*.controller merge=unityyamlmerge eol=lf
+*.mat merge=unityyamlmerge eol=lf
+*.meta merge=unityyamlmerge eol=lf
 
-# Unity specific formats (force text + smart merge)
-*.unity text merge=unityyamlmerge eol=lf
-*.prefab text merge=unityyamlmerge eol=lf
-*.asset text merge=unityyamlmerge eol=lf
-*.meta text merge=unityyamlmerge eol=lf
-*.anim text merge=unityyamlmerge eol=lf
-*.controller text merge=unityyamlmerge eol=lf
-*.mat text merge=unityyamlmerge eol=lf
-*.physicMaterial text merge=unityyamlmerge eol=lf
+##################################################
+# =============== TEXT FILES =====================
+##################################################
 
-# Binary files
-*.png binary
-*.jpg binary
-*.jpeg binary
-*.fbx binary
-*.mp4 binary
-*.wav binary
-*.mp3 binary
-*.ttf binary
-*.otf binary
+*.cs text eol=lf
+*.shader text eol=lf
+*.cginc text eol=lf
+*.hlsl text eol=lf
+*.json text eol=lf
+*.xml text eol=lf
+*.txt text eol=lf
+*.md text eol=lf
+*.asmdef text eol=lf
+*.asmref text eol=lf
 
-# Prevent Unity auto-convert line endings
-*.unity linguist-language=YAML
-*.prefab linguist-language=YAML
+##################################################
+# =============== GIT LFS ========================
+##################################################
+
+# Images
+*.psd filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.jpeg filter=lfs diff=lfs merge=lfs -text
+*.tga filter=lfs diff=lfs merge=lfs -text
+*.exr filter=lfs diff=lfs merge=lfs -text
+
+# 3D
+*.fbx filter=lfs diff=lfs merge=lfs -text
+*.blend filter=lfs diff=lfs merge=lfs -text
+*.obj filter=lfs diff=lfs merge=lfs -text
+
+# Audio
+*.wav filter=lfs diff=lfs merge=lfs -text
+*.ogg filter=lfs diff=lfs merge=lfs -text
+*.mp3 filter=lfs diff=lfs merge=lfs -text
+
+# Video
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.mov filter=lfs diff=lfs merge=lfs -text
+
+# Archives
+*.zip filter=lfs diff=lfs merge=lfs -text
+*.rar filter=lfs diff=lfs merge=lfs -text
